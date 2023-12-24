@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Hidden Navigation Bar -->
+<div class="hidden-navbar">
+    <a href="#" onclick="toggleNav()">Show Nav</a>
+</div>
+<!-- Outside Navigation Bar -->
+<div class="outside-navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#" onclick="showAppointmentForm()">Book Appointment</a>
+</div>
+<!-- Appointment Booking Form (Initially Hidden) -->
+<div id="appointment-form" class="appointment-form" style="display: none;">
+    <h2>Book an Appointment</h2>
+    <form action="process.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        <label for="date">Preferred Date:</label>
+        <input type="date" name="date" required>
+        <input type="submit" value="Book Appointment">
+    </form>
+</div>
+<script>
+    function toggleNav() {
+        document.querySelector('.outside-navbar').classList.toggle('show');
+    }
+
+    function showAppointmentForm() {
+        document.getElementById('appointment-form').style.display = 'block';
+    }
+</script>
+</body>
+</html>
